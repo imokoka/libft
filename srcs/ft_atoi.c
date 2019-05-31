@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 12:05:48 by imokoka           #+#    #+#             */
-/*   Updated: 2019/05/30 09:17:29 by imokoka          ###   ########.fr       */
+/*   Created: 2019/05/30 09:11:46 by imokoka           #+#    #+#             */
+/*   Updated: 2019/05/30 09:15:36 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-size_t	ft_strlen(const char *str)
+int	ft_atoi(const char *str)
 {
+	int n;
 	int i;
+	int num;
 
 	i = 0;
-	while (str[i] != '\0')
+	n = 1;
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+	|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
-	return (i);
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			n *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - 48);
+		i++;
+	}
+	return (num * n);
 }
