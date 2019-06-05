@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 14:41:31 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/05 09:48:00 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/05 11:38:36 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/05 11:55:37 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int l;
-	int i;
+	size_t i;
+	size_t j;
+	size_t dst_len;
+	size_t src_len;
 
 	i = 0;
-	l = 0;
-	while (src[l] != '\0')
-		l++;
-	l++;
-	while (i < l && (size_t)i < len)
-	{
-		dst[i] = src[i];
+	j = 0;
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dstsize <= dst_len)
+		return (src_len + dstsize);
+	while ((dst[i] != '\0') && (i < (dstsize - 1)))
 		i++;
-	}
-	while ((size_t)i < len)
+	while ((src[j] != '\0') && (i < (dstsize - 1)))
 	{
-		dst[i] = '\0';
+		dst[i] = src[j];
 		i++;
+		j++;
 	}
-	return (dst);
+	dst[i] = '\0';
+	return (dst_len + src_len);
 }

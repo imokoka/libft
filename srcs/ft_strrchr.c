@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 11:27:16 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/05 09:48:34 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/05 09:25:42 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/05 09:27:15 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(const char *s1, const char *s2)
-{
-	int					i;
-	unsigned const char	*str1;
-	unsigned const char	*str2;
+#include "libft.h"
 
-	i = 0;
-	str1 = (unsigned const char *)s1;
-	str2 = (unsigned const char *)s2;
-	while (str1[i] == str2[i] && str1[i] != '\0' && str2[i] != '\0')
-		i++;
-	return (str1[i] - str2[i]);
+char	*ft_strrchr(const char *s, int c)
+{
+	int i;
+
+	i = ft_strlen(s);
+	if ((char)c == '\0')
+		return ((char*)s + i);
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char*)s + i);
+		i--;
+	}
+	return (NULL);
 }
