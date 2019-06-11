@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 14:41:31 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/06 13:53:41 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/07 09:20:54 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/07 12:00:28 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+#include "libft.h"
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
+	int					i;
+	unsigned char		*dest;
+	unsigned const char	*srcs;
 
 	i = 0;
-	while (src[i] == '\0' && (size_t)i < len)
+	dest = (unsigned char *)dst;
+	srcs = (unsigned char *)src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while ((size_t)i < n)
 	{
-		dst[i] = src[i];
+		if (srcs[i] == (unsigned char)c)
+		{
+			dest[i] = srcs[i];
+			return ((char*)dst + (i + 1));
+		}
+		dest[i] = srcs[i];
 		i++;
 	}
-	while ((size_t)i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (NULL);
 }
