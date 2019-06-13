@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 11:55:53 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/13 12:33:59 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/13 12:35:07 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/13 14:04:42 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(const char *s1)
+void	ft_bzero(void *s, size_t n)
 {
-	int		i;
-	char	*str;
+	size_t	i;
+	char	*temp_s;
 
 	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
+	temp_s = (char *)s;
+	while (i < n)
 	{
-		errno = ENOMEM;
-		return (NULL);
+		temp_s[i] = 0;
+		i++;
 	}
-	ft_strcpy(str, s1);
-	return (str);
 }

@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 11:55:53 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/13 12:33:59 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/13 14:04:57 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/13 15:11:57 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(const char *s1)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
-	char	*str;
+	int				i;
+	unsigned char	x;
+	unsigned char	*y;
 
 	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
+	x = (unsigned char)c;
+	y = (unsigned char *)s;
+	while ((size_t)i < n)
 	{
-		errno = ENOMEM;
-		return (NULL);
+		if (y[i] == x)
+			return ((char *)s + i);
+		i++;
 	}
-	ft_strcpy(str, s1);
-	return (str);
+	return (NULL);
 }
