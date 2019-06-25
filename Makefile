@@ -6,7 +6,7 @@
 #    By: imokoka <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 11:18:44 by imokoka           #+#    #+#              #
-#    Updated: 2019/06/20 08:50:36 by imokoka          ###   ########.fr        #
+#    Updated: 2019/06/25 15:03:51 by imokoka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,8 @@ SRC = ft_atoi.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_isprime.c \
+		ft_wordcount.c \
+		ft_wordlen.c
 
 SRCO = ft_atoi.o \
 		 ft_bzero.o \
@@ -118,7 +119,8 @@ SRCO = ft_atoi.o \
 		 ft_strtrim.o \
 		 ft_tolower.o \
 		 ft_toupper.o \
-		 ft_isprime.o 
+		 ft_wordcount.o \
+		 ft_wordlen.o
 
 FLAGS = -Wall -Werror -Wextra
 

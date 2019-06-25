@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 14:41:31 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/25 16:22:04 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/25 15:00:21 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/25 15:03:59 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+size_t	ft_wordcount(const char *s, char c)
 {
 	size_t	i;
+	size_t	w;
 
 	i = 0;
-	while ((i < len) && (src[i] != '\0'))
+	w = 0;
+	while (s[i])
 	{
-		dst[i] = src[i];
+		if (s[i] != c)
+			w++;
+		while (s[i] != c && s[i + 1])
+			i++;
 		i++;
 	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (w);
 }
