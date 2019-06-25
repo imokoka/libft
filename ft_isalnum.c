@@ -6,11 +6,11 @@
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 10:40:48 by imokoka           #+#    #+#             */
-/*   Updated: 2019/05/29 10:43:49 by imokoka          ###   ########.fr       */
+/*   Updated: 2019/06/25 10:00:33 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

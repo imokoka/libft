@@ -6,11 +6,11 @@
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 12:05:48 by imokoka           #+#    #+#             */
-/*   Updated: 2019/05/30 09:17:29 by imokoka          ###   ########.fr       */
+/*   Updated: 2019/06/25 10:04:47 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

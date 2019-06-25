@@ -6,9 +6,11 @@
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 14:04:57 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/13 15:11:57 by imokoka          ###   ########.fr       */
+/*   Updated: 2019/06/25 10:02:39 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

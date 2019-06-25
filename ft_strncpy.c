@@ -6,9 +6,11 @@
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 14:41:31 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/06 13:53:41 by imokoka          ###   ########.fr       */
+/*   Updated: 2019/06/25 10:05:22 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 11:11:39 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/25 10:06:11 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/25 09:48:58 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/25 09:55:24 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int ch)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (ch >= 'a' && ch <= 'z')
-		ch -= 32;
-	return (ch);
+	char	*str;
+	int		size;
+
+	if (!s1 || !s2)
+		return (NULL);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	if (!(str = (char*)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	ft_memset(str, '\0', size + 1);
+	ft_strcat(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }

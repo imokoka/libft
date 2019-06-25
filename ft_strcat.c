@@ -6,11 +6,11 @@
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 09:17:52 by imokoka           #+#    #+#             */
-/*   Updated: 2019/05/30 10:07:30 by imokoka          ###   ########.fr       */
+/*   Updated: 2019/06/25 10:03:37 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strcat(char s1, const char s2)
 {
