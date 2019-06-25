@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/18 09:14:47 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/25 08:45:03 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/25 08:37:41 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/25 08:45:41 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (s)
-	{
-		ft_memset(s, '\0', ft_strlen(s));
-	}
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	else
+		return (0);
 }

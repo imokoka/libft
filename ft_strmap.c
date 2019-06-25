@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/18 09:14:47 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/25 08:45:03 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/25 08:28:50 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/25 08:29:42 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	if (s)
+	int		i;
+	char	*str;
+
+	i = 0;
+	if (!s || !f)
+		return (NULL);
+	if (!(str = ft_strnew(ft_strlen(s))))
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		ft_memset(s, '\0', ft_strlen(s));
+		str[i] = f(s[i]);
+		i++;
 	}
+	str[i] = '\0';
+	return (str);
 }

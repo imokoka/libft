@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imokoka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/18 09:14:47 by imokoka           #+#    #+#             */
-/*   Updated: 2019/06/25 08:45:03 by imokoka          ###   ########.fr       */
+/*   Created: 2019/06/25 08:25:43 by imokoka           #+#    #+#             */
+/*   Updated: 2019/06/25 08:28:06 by imokoka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (s)
+	int i;
+
+	i = 0;
+	if (s && f)
 	{
-		ft_memset(s, '\0', ft_strlen(s));
+		while (s[i] != '\0')
+		{
+			(*f)(i, s + i);
+			i++;
+		}
 	}
 }
